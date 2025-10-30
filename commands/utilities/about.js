@@ -30,7 +30,7 @@ const executeAboutCommand = async (interaction) => {
     .setFooter({text: `Running since ${new Date(botUser.createdTimeStamp).toLocaleDateString()}`})
     .setTimestamp();
 
-    await interaction.reply({embeds: embed});
+    await interaction.reply({embeds: [embed]});
 }
 
 export default {
