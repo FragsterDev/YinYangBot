@@ -48,7 +48,7 @@ const executeRpsCommand = async (interaction) => {
 
             await sleep(4000);
 
-            await i.update({
+            await i.message.edit({
             content: `🎮 Game is loading...`,
             components: [],
             });
