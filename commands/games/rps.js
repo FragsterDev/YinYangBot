@@ -1,5 +1,6 @@
 
 import { ActionRow, ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder, time } from "discord.js";
+import { sleep } from "../../helpers/sleep";
 
 const rpsCommandData = new SlashCommandBuilder()
 .setName('rps')
@@ -37,11 +38,22 @@ const executeRpsCommand = async (interaction) => {
                 content: `${challengedUser} declined the request `,
                 components: []
             });
+
+            messageCollector.stop();
         } else if(i.customId === "acceptrps"){
             await i.update({
             content: `${challengedUser} accepted the challenge! 🎮`,
             components: [],
             });
+
+            await sleep(4000);
+
+            await i.update({
+            content: `🎮 Game is loading...`,
+            components: [],
+            });
+
+            await sleep(5000);
 
             await startGame(interaction, challenger, challengedUser);
             messageCollector.stop();
@@ -75,7 +87,7 @@ async function startGame(interaction,challenger, challenged) {
   let challengedChoice = null
 
   const message = await interaction.followUp({
-    content: `RPS Challenge: ${challenger} vs ${challenged}`,
+    content: `🎮 RPS Challenge: ${challenger} vs ${challenged}`,
     components: [gameButtons],
     fetchReply: true
   });
