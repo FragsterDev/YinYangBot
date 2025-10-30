@@ -4,8 +4,11 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { pathToFileURL } from 'url';
+import express from 'express';
 
 dotenv.config();
+
+const app = express();
 
 // __dirname fix for ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -69,3 +72,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
 });
 
 client.login(process.env.TOKEN);
+
+app.get('/', (req, res) => {
+	res.send('Bot is alive');
+});
+
+app.listen(3000, () => console.log('Express Server is running'));
