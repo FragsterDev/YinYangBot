@@ -1,6 +1,6 @@
 
 import { ActionRow, ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder, time } from "discord.js";
-import { sleep } from "../../helpers/sleep";
+import { sleep } from "../../helpers/sleep.js";
 
 const rpsCommandData = new SlashCommandBuilder()
 .setName('rps')

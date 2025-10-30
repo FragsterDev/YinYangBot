@@ -1,2 +1,2 @@
 // helper/sleep.js
-export default sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
