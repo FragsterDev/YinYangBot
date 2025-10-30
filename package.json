@@ -1,0 +1,17 @@
+{
+  "name": "yingyangbot",
+  "version": "1.0.0",
+  "description": "A discord bot for my server using discord.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "author": "FragsterDev",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.24.1",
+    "dotenv": "^17.2.3"
+  }
+}
